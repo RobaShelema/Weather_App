@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherCast - Real-time Weather App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="weather-container">
+        <header class="header">
+            <h1><i class="fas fa-cloud-sun"></i> WeatherCast</h1>
+            <p>Real-time weather information for any city worldwide</p>
+        </header>
+        
+        <div class="search-container">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="city-input" placeholder="Enter city name...">
+            </div>
+            <button id="search-btn" class="search-btn">
+                <i class="fas fa-search"></i> Search
+            </button>
+        </div>
+        
+        <div class="weather-display">
+            <!-- Loading indicator -->
+            <div class="loading" id="loading">
+                <i class="fas fa-spinner fa-spin"></i> Loading weather data...
+            </div>
+            
+            <!-- Weather data display -->
+            <div class="weather-card" id="weather-card">
+                <!-- Default message (shown initially) -->
+                <div class="default-message" id="default-message">
+                    <i class="fas fa-city"></i>
+                    <h3>Search for a city to see weather information</h3>
+                    <p>Try searching for "London", "Tokyo", or "New York"</p>
+                </div>
+                
+                <!-- Weather data (hidden initially) -->
+                <div class="weather-data" id="weather-data">
+                    <div class="location-info">
+                        <h2 class="city-name" id="city-name">City Name</h2>
+                        <div class="country" id="country">Country</div>
+                        <div class="date-time" id="date-time">Current date and time</div>
+                    </div>
+                    
+                    <div class="current-weather">
+                        <div class="temperature-section">
+                            <div class="weather-icon" id="weather-icon">
+                                <i class="fas fa-sun"></i>
+                            </div>
+                            <div>
+                                <div class="temperature" id="temperature">25<span>°C</span></div>
+                                <div class="weather-description" id="weather-description">Clear Sky</div>
+                            </div>
+                        </div>
+                        
+                        <div class="weather-feels-like">
+                            <p>Feels like <span id="feels-like">26°C</span></p>
+                        </div>
+                    </div>
+                    
+                    <div class="weather-details">
+                        <div class="detail-card">
+                            <div class="detail-icon">
+                                <i class="fas fa-tint"></i>
+                            </div>
+                            <div class="detail-info">
+                                <h4>Humidity</h4>
+                                <p id="humidity">65%</p>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-card">
+                            <div class="detail-icon">
+                                <i class="fas fa-wind"></i>
+                            </div>
+                            <div class="detail-info">
+                                <h4>Wind Speed</h4>
+                                <p id="wind-speed">12 km/h</p>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-card">
+                            <div class="detail-icon">
+                                <i class="fas fa-temperature-high"></i>
+                            </div>
+                            <div class="detail-info">
+                                <h4>Pressure</h4>
+                                <p id="pressure">1013 hPa</p>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-card">
+                            <div class="detail-icon">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <div class="detail-info">
+                                <h4>Visibility</h4>
+                                <p id="visibility">10 km</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Error message container -->
+            <div class="error-message" id="error-message">
+                <!-- Error messages will appear here -->
+            </div>
+        </div>
+        
+        <footer class="footer">
+            <p>Powered by OpenWeatherMap API</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
